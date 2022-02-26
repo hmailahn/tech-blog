@@ -68,3 +68,8 @@ footer {
   padding: 1%;
   font-size: 110%;
 }
+
+.body-text {
+    height: 200px;
+    width: 500px;
+}
