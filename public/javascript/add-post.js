@@ -1,3 +1,13 @@
+var newForm = document.querySelector('.new-post-form');
+var createPost =  document.querySelector('.create-post');
+
+function newFormDisplay () {
+ newForm.style.display = "block";
+ createPost.style.display = "none";
+
+
+}
+
 async function newFormHandler(event) {
     event.preventDefault();
   
@@ -22,4 +32,8 @@ async function newFormHandler(event) {
     }
   }
   
+
+  document.querySelector('.create-post').addEventListener('click', newFormDisplay);
+
   document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+
