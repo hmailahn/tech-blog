@@ -1,3 +1,28 @@
+:root {
+    --primary-color: rgb(211, 253, 220);
+    --secondary-color: rgb(99, 190, 119);
+    --text-color: rgb(19, 31, 22);
+}
+
+* {
+    background-color: var(--primary-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+}
+
+header h1 {
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+header h1 a {
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    
+}
+
 .wrapper {
     width: 100%;
     min-height: 100%;
