@@ -9,7 +9,6 @@ async function editFormHandler(event) {
     const response = await fetch(`/api/posts/${id}`, {
       method: "PUT",
       body: JSON.stringify({
-        
         title,
         body
       }),
@@ -19,7 +18,7 @@ async function editFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.reload();
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
