@@ -23,14 +23,16 @@ Comment.init(
       references: {
         model: 'user',
         key: 'id'
-      }
+      },
+      onDelete: 'SET NULL'
     },
     post_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'post',
         key: 'id'
-      }
+      },
+      onDelete: 'SET NULL'
     }
   },
   {
