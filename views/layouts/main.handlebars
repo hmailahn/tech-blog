@@ -15,8 +15,8 @@
         </h1>
         <nav>
           <a class="nav-style" href="/">Home</a>
-            <a class="nav-style" href="/dashboard">Dashboard</a>
-            {{#if loggedIn}}
+          <a class="nav-style" href="/dashboard">Dashboard</a>
+          {{#if loggedIn}}
             <button class="nav-style" id="logout">Logout</button>
           {{else}}
             <a class="nav-style" href="/login">Login</a>
@@ -34,6 +34,42 @@
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}
+
+    {{#if loggedIn}}
+      <script>
+    let inactivityTime = function () {
+    let time; 
+    window.onload = resetTimer;
+    document.onload = resetTimer;
+    document.onmousemove = resetTimer;
+    document.onmousedown = resetTimer; 
+    document.ontouchstart = resetTimer;
+    document.onclick = resetTimer;
+    touchpad clicks document.onkeypress = resetTimer;
+    document.addEventListener('scroll', resetTimer, true);
+    async function logout() {
+      alert("You have been logged out for inactivity!")
+      const response = await fetch('/api/users/logout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' }
+    });
+    if(response.ok) {
+      document.location.replace('/login');
+      } else {
+    alert(response.statusText);
+    }
+    }
+    function resetTimer() {
+    clearTimeout(time);
+    time = setTimeout(logout, 5000)
+  
+    }
+    };
+    inactivityTime();
+    </script>
+    {{/if}}
+
+
   </body>
 
 </html>
